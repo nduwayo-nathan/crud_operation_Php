@@ -17,15 +17,42 @@ $result = $conn->query($sql);
     <title>View Page</title>
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<style>
+    .container{
+        width:100%;
+        gap:2rem;
+        font-size:2rem;
+        background-color:gray;
+        display: flex;
+        flex-direction:row;
+        color:white;
+    }
+    .container>a{
+        left:800px;
+        height:6rem;
+        padding: 1rem;
+        position: relative;
+        width:20rem;
+        border:2px solid orange;
+        background-color:green;
+        color:white;
+    }
+    .container>h1{
+        position: relative;
+    align-self:flex-start;
+    }
+</style>
 
 </head>
 
-<body>
+
+<body><div class="main">
 
     <div class="container">
-
-        <h2>users</h2>
+        <h1 >users</h1>
         <a href="generate Pdf.php" >PRINT PDF</a>
+        <a href="createUser.php" >Create a new user</a>
+    </div>
 
 <table class="table">
 
