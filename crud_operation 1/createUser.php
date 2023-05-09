@@ -15,7 +15,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
    
    if($result==true){
        echo 'user registered';
-       header("Location:Login.html");
+       header("Location:Login.php");
    
    }else{
            echo 'user not inserted';

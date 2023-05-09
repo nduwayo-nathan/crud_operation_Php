@@ -1,43 +1,46 @@
+
+<?php
+include "connection.php";
+//process the login form data
+if ($_SERVER["REQUEST_METHOD"] == "POST"){
+  $email = $_POST['email'];
+  $password = $_POST['password'];
+  $result = $conn->query("SELECT * FROM users WHERE email='$email' AND password='$password'");
+  $row = mysqli_fetch_assoc($result);
+  $hash = $row['password'];
+  
+  if (!$result){
+    echo "Error: ".$conn->error;
+    exit();
+  }
+  
+    session_start();
+
+   if( $_SESSION["email"] = $email && password_verify($password, $hash));
+    header("Location:display.php");
+    exit();
+  }
+  else{
+    echo "Invalid email or password";
+  }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-   
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
 </head>
 <body>
-<?php
-include "connection.php";
-
-if ($_SERVER["REQUEST_METHOD"] == "POST"){
-  // Retrieve the submitted form data
-  $email = $_POST['email'];
-  $password = $_POST['password'];
-
-  // Validate the submitted credentials against a database of registered users
-  if ($email === 'email' && $password === 'password') {
-    // Start a session and store the email as a session variable
-    session_start();
-    $_SESSION['email'] = $email;
-
-    // Redirect to the protected page
-    header('Location: display.php');
-    exit();
-  } else {
-    // Redirect back to the login page with an error message
-    header('Location: createUser.php');
-    exit();
-  }
-}
-?>
-<form method="POST"">
+  <div>
+<form method="POST" action="">
         <label for="email">Email:</label>
         <input type="email"  name="email" required><br>
         <label for="password">Password:</label>
         <input type="password"  name="password" required><br>
         <button type="submit">Login</button>
-    </form>
+</form>
+</div>
 </body>
-
 </html>
