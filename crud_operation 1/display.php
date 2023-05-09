@@ -14,7 +14,7 @@ $result = $conn->query($sql);
 
 <head>
 
-    <title>View Page</title>
+    <title>Display</title>
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 <style>
@@ -54,7 +54,7 @@ $result = $conn->query($sql);
         <a href="createUser.php" >Create a new user</a>
     </div>
 
-<table class="table">
+<table class="table"  border ="2px" cellspacing="2px" padding ="2px" >
 
     <thead>
 
