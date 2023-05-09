@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
     exit();
   } else {
     // Redirect back to the login page with an error message
-    header('Location: login.html?error=1');
+    header('Location: createUser.html');
     exit();
   }
 }
